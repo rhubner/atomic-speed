@@ -5,6 +5,11 @@ It's possible that JMH test is not perfect, especially I'm getting some strange 
 For example, `getSynchronized` is faster than  `getAtomic` for 8 and more cores. Or why `getAtomic` have more
 throughput for 32 thread when CPU have max 12 physical cores(Yes 24 virtual).
 
+
+**Disclaimer**
+I don't think `getVolatile` works as we think. Volatile doesn't guarantee atomic increment. I just put it here
+for curiosity.
+
 ```
 Single thread:
 Benchmark                Mode  Cnt          Score   Error  Units
